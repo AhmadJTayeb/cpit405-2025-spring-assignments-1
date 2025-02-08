@@ -1,0 +1,264 @@
+/* General Grid Layout */
+html, body {
+    height: 100%; /* Full height for the body and html */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+font-family: "Courier New", serif  ;
+    background-image: url("images/memphis-mini.png");
+}
+
+/* Header, Navigation, Footer */
+header {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-area: header;
+    text-align: center;
+
+    padding: 10px;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+main {
+    grid-area: main;
+    width: 90%;
+    /* more background can be found at https://www.toptal.com/designers/subtlepatterns/tag/light/ */
+}
+
+nav {
+    grid-area: nav;
+    text-align: center;
+    padding: 5px;
+}
+
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 10px;
+}
+
+
+header { background: #333; color: white; }
+nav { background: #444; }
+footer { background: #333; color: white; }
+
+/* Navigation Styling */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: yellow;
+    font-weight: bolder;
+    background-color: transparent;
+}
+
+/* Profile Section (Flexbox) */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    margin-top: 10px;
+}
+.profile {
+    text-align: center;
+    margin-left: 15%;
+}
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-top: 20px;
+
+    border: 2px solid transparent; /* Initial border */
+    animation: borderColorAnimation 3s infinite; /* Apply the animation */
+    /* shadow */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background: #333;
+    color: white;
+}
+tr {
+    background: #f2f2f2;
+}
+
+table.courses {
+    margin-bottom: 20px;
+}
+
+.courses tr:hover {
+    background: #e4e0e0;
+}
+
+.courses tr:nth-child(even) {
+    background: #c8c6c6;
+}
+
+.courses tr:nth-child(even):hover {
+    background: #a8afa8;
+}
+
+/* Form Focus & Required */
+input[type='text']:focus, input[type='email']:focus, textarea:focus {
+    background: #eef;
+}
+input:required, textarea:required {
+    border: 2px solid darkslateblue;
+}
+
+/* Pseudo-element Styling */
+.about p:first-of-type::first-letter {
+    font-size: 1.5em;
+    color: darkgreen;
+    font-weight: bold;
+}
+
+#sub_title {
+    font-size: small;
+}
+
+.left-side-header {
+    float: left;
+}
+
+.right-side-header {
+    float: right;
+}
+
+.social-media-icon {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+.social-media-icon:hover {
+    width: 35px;
+    height: 35px;
+}
+
+.title {
+    border-bottom-color: lightgray;
+    border-bottom-style: dashed;
+    border-bottom-width: 3px;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.left-side-menu {
+    font-size: larger;
+    list-style: none;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.left-side-menu li:hover {
+    background-color: #a9dfa9;
+    cursor: pointer;
+}
+
+.left-side-menu li {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+
+
+a:hover {
+    color: darkgreen;
+    background-color: lightyellow;
+}
+
+.left-side-menu a {
+    margin: 10px;
+    color: darkgreen;
+    background-color: transparent;
+}
+
+/* Keyframes for border color animation */
+@keyframes borderColorAnimation {
+    0% {
+        border-color: red;
+    }
+    25% {
+        border-color: orange;
+    }
+    50% {
+        border-color: yellow;
+    }
+    75% {
+        border-color: green;
+    }
+    100% {
+        border-color: red;
+    }
+}
+
+.form-div {
+    display: block;
+    margin: 10px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.form-submit {
+    width: 20%;
+    padding: 10px;
+    margin: 5px;
+    margin-left: 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #333;
+    color: white;
+}
+
+.form-submit:hover {
+    background-color: #444;
+}
+
+.form-submit:active {
+    background-color: #555;
+}
